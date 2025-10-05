@@ -15,7 +15,7 @@
 
         surahs.forEach(surah => {
           const card = document.createElement("div");
-          card.className = "w-80 bg-yellow-300 px-2 py-1 rounded-md shadow hover:shadow-lg transition";
+          card.className = "w-80 bg-emerald-500 px-2 py-1 rounded-md shadow hover:shadow-lg transition border-1 border-emerald-700";
 
           // fill the card’s inner HTML
           card.innerHTML = `
@@ -23,19 +23,19 @@
               <h2 class="h-6 w-6 flex items-center justify-center bg-gray-300 rounded-md text-base font-semibold text-gray-700">
                 ${surah.sequence}
               </h2>
-              <h2 class="englishName text-xl font-bold capitalize text-[#0f5132]">
+              <h2 class="englishName text-xl font-bold capitalize text-white">
                 ${surah.name.latin.short}
               </h2>
-              <h2 class="arabicName text-xl font-bold font-arabic">
+              <h2 class="arabicName text-2xl font-bold font-arabic text-white">
                 ${surah.name.arabic.short}
               </h2>
             </div>
 
             <div class="flex justify-between items-center px-3 mt-2">
-              <h2 class="surahNameMeaning text-base font-light italic">
+              <h2 class="surahNameMeaning text-base font-light italic text-white">
                 ${surah.translation}
               </h2>
-              <h2 class="text-base font-light verseNumber">
+              <h2 class="text-base font-light verseNumber text-white">
                 ${surah.ayahCount} verses
               </h2>
             </div>
@@ -49,6 +49,10 @@
         container.innerHTML = `<p class="text-red-500">Could not load surahs.</p>`;
       });
   });
+//   async function getSurahReading(){
+//     const response = await fetch('');
+//     const data =await response.json();
+//   }
 
 
 
