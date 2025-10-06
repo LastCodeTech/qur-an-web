@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body class="bg-[#f4f1e9] font-english">
+    <!--main navbar-->
+        <div class="hidden main-navBar md:flex  items-center justify-between font-english px-8 py-1 bg-gradient-to-r from-[#0f5132] via-[#198754] to-[#0f5132] text-white fixed top-0 left-0 right-0">
+            <div class="block ">
+                <img src="../images/new_quran_logo-removebg-preview.png" class="h-20 w-25">
+                <h2 class="text-2xl font-bold capitalize tracking-widest">AyahFlow</h2>
+            </div>
+            <ul class="items-center flex gap-10">
+                <li><div class="flex flex-row items-center gap-1"><i class="fa-solid fa-house text-2xl"></i> <h2 class="text-2xl font-thin capitalize"><a href="home.html">home</a> </h2></div></li>
+                <li><div class="flex flex-row items-center gap-1"><i class="fa-solid fa-book-open text-2xl"></i><h2 class="text-2xl font-thin capitalize"><a href="read quran.html">Read qur'an</a></h2></div> </li>
+                <li><div class="flex flex-row items-center gap-1"><i class="fa-solid fa-person-chalkboard text-2xl"></i><h2 class="text-2xl font-thin capitalize"><a href="reciters.html">reciters</a>   </h2></div></li>
+            </ul>
+        </div>
+       
+      <!-- sm device top nav bar -->
+        <div class="font-english px-4 py-1 bg-gradient-to-r from-[#0f5132] via-[#198754] to-[#0f5132] text-white fixed top-0 left-0 right-0">
+             <div class="flex md:hidden items-center justify-between ">
+                <img src="../images/new_quran_logo-removebg-preview.png" class="h-15 w-20">
+                <h2 class="text-2xl font-bold capitalize tracking-widest">AyahFlow</h2>
+            </div>
+        </div>
+        <!--sm device down nav bar-->
+        <div class="md:hidden py-2 bg-gradient-to-r from-[#0f5132] via-[#198754] to-[#0f5132] text-white fixed bottom-0 left-0 right-0">
+            <ul class="items-center md:hidden flex justify-evenly gap-10">
+                <li><div class="flex flex-col items-center gap-1"><i class="fa-solid fa-house text-xl"></i> <h2 class="text-xl font-thin capitalize"><a href="home.html">home</a> </h2></div></li>
+                <li><div class="flex flex-col items-center gap-1"><i class="fa-solid fa-book-open text-xl"></i><h2 class="text-xl font-thin capitalize"><a href="read quran.html">Read qur'an</a> </h2></div> </li>
+                <li><div class="flex flex-col items-center gap-1"><i class="fa-solid fa-person-chalkboard text-xl"></i><h2 class="text-xl font-thin capitalize"><a href="reciters.html">reciters</a> </h2></div></li>
+            </ul>
+        </div>
+
+       
+    <div class="p-5 mt-30">
+    <div id="surahInfo" class="text-center mt-6"></div>
+    <div id="ayahContainer" class="mt-8 space-y-4"></div>
+  </div>
+
+
+        <!-- <script src="../js/interactivity.js"> </script> -->
+        <script>
+              document.addEventListener('DOMContentLoaded',function(){
+    let url = window.location.href;
+    let index = 1;
+    if(url.length == 63){
+        index = url.charAt(61)+ url.charAt(62);
+    }
+    else if(url.length > 63){
+         index = url.charAt(61)+ url.charAt(62)+url.charAt(63);
+    }
+    else{
+        index = url.charAt(61);
+    }
+    let realIndex = index;
+    console.log(realIndex);
+
+    let link ='https://staticquran.vercel.app/api/v1/surah/'+ realIndex  
+     async function getsurah(){
+      const response = await fetch(link);
+      const data = response.json();
+    //   console.log(data);
+      let surahInfo= document.getElementById('surahInfo');
+      surahInfo.textContent=data.name.arabic 
+      
+     }
+     getsurah()
+   
+  })
+        </script>
+</body>
+</html>
