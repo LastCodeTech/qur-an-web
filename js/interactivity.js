@@ -3,6 +3,8 @@
   
     const container = document.getElementById("surahContainer");
     const surahsList = document.querySelector('.surahsList')
+    let loading = document.getElementById('loadingg');
+loading.innerHTML='loading.... pls wait'
 
     fetch("https://staticquran.vercel.app/api/v1/surah")
       .then(res => {

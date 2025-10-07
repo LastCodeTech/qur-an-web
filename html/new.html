@@ -43,6 +43,7 @@
     <div id="surahInfo" class="text-center mt-6"></div>
     <div id="ayahContainer" class="mt-8 space-y-4"></div>
   </div>
+  <div id="loading" class="loading flex justify-center items-center  text-emerald-500 text-2xl font-thin"></div>
 
 
         <!-- <script src="../js/interactivity.js"> </script> -->
@@ -65,7 +66,8 @@
     const ayahContainer = document.getElementById('ayahContainer');
 
 let link ='https://staticquran.vercel.app/api/v1/surah/' + realIndex 
-
+let loading = document.getElementById('loading');
+loading.innerHTML='loading.... pls wait'
  async function getSurah(){
     const response = await fetch(link);
     const result = await response.json();
