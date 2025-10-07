@@ -4,7 +4,11 @@
     const container = document.getElementById("surahContainer");
     const surahsList = document.querySelector('.surahsList')
     let loading = document.getElementById('loadingg');
-loading.innerHTML='loading.... pls wait'
+      //  .textContent=content,setTimeout(closeToast,6000) ;
+      function hideLoading(){
+ loading.classList.add('hidden')
+      }
+loading.textContent='loading.... pls wait',setTimeout(hideLoading,3000);
 
     fetch("https://staticquran.vercel.app/api/v1/surah")
       .then(res => {
