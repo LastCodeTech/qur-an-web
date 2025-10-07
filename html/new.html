@@ -39,7 +39,7 @@
         </div>
 
        
-    <div class="p-5 mt-30">
+    <div class="p-5 mt-10 md:mt-25 mb-20">
     <div id="surahInfo" class="text-center mt-6"></div>
     <div id="ayahContainer" class="mt-8 space-y-4"></div>
   </div>
@@ -61,17 +61,47 @@
     }
     let realIndex = index;
     console.log(realIndex);
+    const surahInfo = document.getElementById('surahInfo');
+    const ayahContainer = document.getElementById('ayahContainer');
 
-    let link ='https://staticquran.vercel.app/api/v1/surah/'+ realIndex  
-     async function getsurah(){
-      const response = await fetch(link);
-      const data = response.json();
-    //   console.log(data);
-      let surahInfo= document.getElementById('surahInfo');
-      surahInfo.textContent=data.name.arabic 
-      
-     }
-     getsurah()
+let link ='https://staticquran.vercel.app/api/v1/surah/' + realIndex 
+
+ async function getSurah(){
+    const response = await fetch(link);
+    const result = await response.json();
+    // console.log(result);
+    surahInfo.innerHTML=
+    
+    // <h2 class='text-2xl md:text-3xl font-semi-bold font-arabic mb-2 md:mb-5'>${result.data.preBismillah.text}</h2>
+    `
+    <h2 class='text-2xl md:text-3xl font-semi-bold text-emerald-500  font-arabic mt-3'>${result.data.name.arabic.long}</h2>
+    <h3 class='text-md md:text-xl font-thin text-emerald-500  mt-2 md:mt-3'>${result.data.name.latin.long} (${result.data.translation})</h3>
+    `
+    // ayahContainer.innerHTML=`
+    // <div >
+    //     <div class='flex justify-end w-full'><h2 class='text-base font-thin'>${result.data.preBismillah.text}</h2></div>
+    //     <div class='flex justify-start w-full'><h2 class='text-base font-thin'>${result.data.preBismillah.translation}</h2></div></div>
+    //     `
+    const ayahs =result.data.ayah;
+    let quranAyah = "";
+    let quranTranslation = "";
+    const ayahCard = document.createElement('div');
+  
+
+    for(let x = 0; x < ayahs.length; x++){
+        quranAyah += "<div style='color:green; text-align:right;'>"+ayahs[x].text + " </div> "+ "<div style='color:red;'>"+ ayahs[x].translation +"<div>";
+        
+    }
+
+       ayahCard.innerHTML=`<div>
+        <div class='flex justify-end w-full'><h2 class='text-base font-thin'>${quranAyah}</h2></div>
+        `
+
+
+    ayahContainer.appendChild(ayahCard)
+    
+ }
+  getSurah();
    
   })
         </script>

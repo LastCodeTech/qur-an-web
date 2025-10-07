@@ -40,7 +40,6 @@
         </div>
         <!--reciters-->
        <div class="md:mt-30 mt-15">
-       
   <div class="flex gap-6 overflow-x-auto lg:w-full px-4 py-4 scroll-smooth ">
     
     <!-- Card -->
@@ -102,10 +101,54 @@
     <!-- Add as many cards as you need -->
     
   </div>
+
+  <div class="surahsList">
+
+  </div>
 </div>
 
     </section>
 
     <script src="../js/interactivity.js"></script>
+    <script>
+//           const surahList = document.querySelector('.surahList')
+//         async function getSurahsCardToPlay(){
+//     const response = await fetch("https://staticquran.vercel.app/api/v1/surah");
+//     const data = response.json();
+
+//     data.forEach(surah => {
+//          const playSurahCard = document.createElement("div");
+//           playSurahCard.className = "w-80 bg-emerald-500 px-2 py-1 rounded-md shadow hover:shadow-lg transition border-2 border-yellow-300";
+//           // fill the card’s inner HTML
+
+//           playSurahCard.innerHTML = `
+//           <a href='new.html?seq=${surah.sequence}'>
+//             <div class="flex justify-between items-center">
+//               <h2 class="h-6 w-6 flex items-center justify-center bg-gray-300 rounded-md text-base font-semibold text-gray-700">
+//                 ${surah.sequence}
+//               </h2>
+//               <h2 class="englishName text-xl font-bold capitalize text-white">
+//                 ${surah.name.latin.short}
+//               </h2>
+//               <h2 class="arabicName text-2xl font-bold font-arabic text-white">
+//                 ${surah.name.arabic.short}
+//               </h2>
+//             </div>
+
+//             <div class="flex justify-between items-center px-3 mt-2">
+//               <h2 class="surahNameMeaning text-base font-light italic text-white">
+//                 ${surah.translation}
+//               </h2>
+//               <h2 class="text-base font-light verseNumber text-white">
+//                 ${surah.ayahCount} verses
+//               </h2>
+//             </div></a>
+//           `;
+//        if(playSurahCard){
+//              surahList.appendChild(playSurahCard);
+//           }
+//   })
+// }
+    </script>
 </body>
 </html>

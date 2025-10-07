@@ -2,7 +2,7 @@
   // Immediately-invoked function or DOMContentLoaded
   
     const container = document.getElementById("surahContainer");
-   
+    const surahsList = document.querySelector('.surahsList')
 
     fetch("https://staticquran.vercel.app/api/v1/surah")
       .then(res => {
@@ -42,31 +42,16 @@
               </h2>
             </div></a>
           `;
-
+// https://staticquran.vercel.app/api/v1/surah/114?lang=id&reciter=29
 
           if(card){
              container.appendChild(card);
           }
-         
-
-     
         });   
         });
      
-    //        document.addEventListener('load',function(){
-    // let index =  surah.sequence;
-    // let link ='https://staticquran.vercel.app/api/v1/surah/'+ index  
-    //  async function getsurah(){
-    //   const response = await fetch(link);
-    //   const data = response.json();
-    //   console.log(data);
-    //   let surahInfo= document.getElementById('surahInfo');
-    //   surahInfo.textContent ='helllo';
-     
-    //  }
-    //  getsurah()
-   
-  // })
+
+       
 
   
   
