@@ -8,7 +8,7 @@
       function hideLoading(){
  loading.classList.add('hidden')
       }
-loading.textContent='loading.... pls wait',setTimeout(hideLoading,3000);
+loading.innerHTML='<i class="fa-solid fa-spinner fa-spin-pulse"></i>',setTimeout(hideLoading,3000);
 
     fetch("https://staticquran.vercel.app/api/v1/surah")
       .then(res => {
