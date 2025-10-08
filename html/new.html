@@ -42,7 +42,7 @@
     <div class="p-5 mt-10 md:mt-25 mb-20">
     <div id="surahInfo" class="text-center mt-6"></div>
     <div id="ayahContainer" class="mt-8 space-y-4 bg-yellow-50 p-3">
-        <div class=>
+        <div class='inBuiltBismillah'>
         <div class="flex justify-end"><h2 class="text-xl mb-2 text-emerald-700 font-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"</h2></div>
         <div class="flex justify-start"><h2 class="text-xl mb-2 text-red-600 font-arabic">In the name of Allah, the Entirely Merciful, the Especially Merciful.</h2></div></div>
     </div>
@@ -62,6 +62,13 @@
     console.log(realIndex);
     const surahInfo = document.getElementById('surahInfo');
     const ayahContainer = document.getElementById('ayahContainer');
+    let inBuiltBismillah =  document.querySelector('.inBuiltBismillah')
+    if (realIndex==1){
+        inBuiltBismillah.classList.add('hidden');
+    }
+    else{
+        inBuiltBismillah.classList.remove('hidden')
+    }
 
 let link ='https://staticquran.vercel.app/api/v1/surah/' + realIndex 
 let loading = document.getElementById('loading');
