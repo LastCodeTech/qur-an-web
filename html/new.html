@@ -50,21 +50,11 @@
         <script>
               document.addEventListener('DOMContentLoaded',function(){
     let url = window.location.href;
-
-    console.log(url);
-    console.log(url.length);
     
-    let index = 1;
-    if(url.length == 63){
-        index = url.charAt(61)+ url.charAt(62);
-    }
-    else if(url.length > 63){
-         index = url.charAt(61)+ url.charAt(62)+url.charAt(63);
-    }
-    else{
-        index = url.charAt(61);
-    }
-    let realIndex = index;
+    const index = new URLSearchParams(window.location.search);
+
+    
+    let realIndex = index.get('seq');
     console.log(realIndex);
     const surahInfo = document.getElementById('surahInfo');
     const ayahContainer = document.getElementById('ayahContainer');
