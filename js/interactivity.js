@@ -1,7 +1,7 @@
 
   // Immediately-invoked function or DOMContentLoaded
   
-    const container = document.getElementById("surahContainer");
+     const container = document.getElementById("surahContainer");
     const surahsList = document.querySelector('.surahsList')
     let loading = document.getElementById('loadingg');
       //  .textContent=content,setTimeout(closeToast,6000) ;
@@ -55,12 +55,3 @@ loading.innerHTML='<i class="fa-solid fa-spinner fa-spin-pulse"></i>',setTimeout
           }
         });   
         });
-     
-
-       
-
-  
-  
-
-
-
