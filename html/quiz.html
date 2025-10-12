@@ -104,7 +104,12 @@
       <div class="absolute top-2 left-3"><i class="fa-solid fa-volume-low fa-beat-fade text-2xl md:text-3xl text-red-600 playQuizSpeaker"></i></div>
       </div>
     </div>
-    <div class="randomAyahInfo"></div>
+    <div class="randomAyahInfo hidden">
+      <div class=' flex  items-center gap-10 mt-8 justify-center '>
+      <h2 class='text-xl font-semibold text-red-600 '>Surah : <b class="surahNo text-emerald-700"></b></h2>
+      <h2 class='text-xl font-semibold text-red-600'>verse : <b class="verseNo text-emerald-700"></b></h2>
+      </div>
+    </div>
 
     <button class="showQuiz border-1 py-2 px-3 rounded-2xl md:mt-15 mt-15 bg-gradient-to-r from-amber-500 to-yellow-400 text-white">Generate Random Ayah</button>
   </div>
@@ -117,29 +122,32 @@
     let playQuizSpeaker = document.querySelector('.playQuizSpeaker');
     let randomAyah = document.querySelector('.randomAyah');
     let randomAyahInfo = document.querySelector('.randomAyahInfo');
+    let surahNo = document.querySelector('.surahNo');
+     let verseNo = document.querySelector('.verseNo');
 
     async function getRandomAyah(){
       const response = await fetch('https://staticquran.vercel.app/api/v1/ayah/random');
       const data = await  response.json();
       randomAyah.textContent =data.data.text;
       const randomAyahInfoData = document.createElement('div');
-      randomAyahInfoData.innerHTML=`
-      <div class=' flex  items-center gap-10 mt-8 justify-center'>
-      <h2 class='text-xl font-semibold text-red-600 '>Surah : ${data.data.surah}</h2>
-      <h2 class='text-xl font-semibold text-red-600'>verse : ${data.data.sequence.surah}</h2>
-      </div>
-      `
       
-      randomAyahInfo.appendChild(randomAyahInfoData);
+      surahNo.textContent=data.data.surah;
+     verseNo.textContent=data.data.sequence.surah;
+      
+      
+      
+      // randomAyahInfo.appendChild(randomAyahInfoData);
+      
      playQuizSpeaker.addEventListener('click',function(){
       let playQuizSpeakerlink =data.data.recitation.audio;
       console.log(playQuizSpeakerlink);
       playQuizSpeaker =new Audio(playQuizSpeakerlink);
       playQuizSpeaker.play();
+    
      })
     }
     btn.addEventListener('click',function(){
-      
+      randomAyahInfo.classList.remove('hidden');
       getRandomAyah();
        
     })
