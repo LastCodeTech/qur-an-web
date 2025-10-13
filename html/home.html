@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
     <link href="../css/style.css" rel="stylesheet">
 </head>
-<body class="bg-[#f4f1e9] font-english">
+<body class="bg-[#f4f1e9] font-english ">
     <section>
         <!--sm device top nav bar-->
         <div class="font-english px-4 py-1 bg-gradient-to-r from-[#0f5132] via-[#198754] to-[#0f5132] text-white fixed top-0 left-0 right-0">
@@ -107,6 +107,11 @@
   <div id="quranSurahs" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 p-4 md:mr-0  md:mb-0 mb-20">
 
   </div>
+
+ <div class=" fixed  bottom-20 left-8 md:top-20 md:left-120  hidden" id="cardPlayerDiv"> 
+  <h1 class="text-red-600 text-xl rounded-full font-bold bg-white w-5 h-5 leading-5 ml-2 " id="closeControl">x</h1>
+  <audio id="cardPlayer" controls></audio>
+ </div> 
 </div>
 
     </section>
@@ -173,21 +178,33 @@ btn2.onclick=function(){
   let reciterIndex = 2;
 }
 
+let cardPlayer = document.getElementById('cardPlayer');
+let cardPlayerDiv = document.getElementById('cardPlayerDiv');
+let closeControl = document.getElementById('closeControl');
           //  let audio = `https://staticquran.vercel.app/api/v1/surah/${data.sequence}?lang=id&reciter=12`;
           let audio =`  https://staticquran.vercel.app/api/v1/surah/70?lang=id&reciter=14`
             async function getRecitationLink(){
                 const response = await fetch (audio);
                 const result = await response.json();
                 const apiAudioPath = data.recitation.audio;
-                let mainAudio = new Audio(apiAudioPath);
-                console.log(mainAudio)
-              mainAudio.play();
+                cardPlayer.pause();
+                cardPlayer.src=apiAudioPath;
+                  cardPlayer.play();
+              //   let mainAudio = new Audio(apiAudioPath);
+              //   console.log(mainAudio)
+              // mainAudio.play();
+
               // console.log(apiAudioPath)
               }
               
             getQuranSurahscard.addEventListener('click',function(){
+            
+              cardPlayerDiv.classList.remove('hidden');
            getRecitationLink();
             })
+            closeControl.onclick=function(){
+              cardPlayerDiv.classList.add('hidden');
+            }
 
             if(getQuranSurahscard){
             containing.appendChild(getQuranSurahscard);
