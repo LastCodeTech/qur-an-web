@@ -10,6 +10,13 @@
       crossorigin="anonymous"
     ></script>
     <link href="../css/style.css" rel="stylesheet" />
+
+    <style>
+      .activeReciter{
+        background: rgb(31, 189, 31) !important;
+        cursor: no-drop !important;
+      }
+    </style>
   </head>
   <body class="bg-[#f4f1e9] font-english">
     <section>
@@ -120,8 +127,8 @@
             <h2 class="mt-3 text-sm font-semibold text-gray-800 text-center">
               Abdul Basit 'Abd us-Samad
             </h2>
-            <button onclick="storeReciter(1);"
-              class="btn-reciter mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+            <button onclick="storeReciter(1); textContent='selected'"
+              class="btn-reciter reciterButton mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -137,8 +144,9 @@
             <h2 class="mt-3 text-sm font-semibold text-gray-800 text-center">
               Abdullah Ibn Ali Basfar
             </h2>
-            <button onclick="storeReciter(2);"
-              class="btn2 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+            <button onclick="storeReciter(2);textContent='selected';"
+           
+              class="btn2 mt-2 reciterButton text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -154,8 +162,8 @@
             <h2 class="mt-3 text-sm font-semibold text-gray-800 text-center">
               Abdurrahman as-Sudais
             </h2>
-            <button onclick="storeReciter(3);"
-              class="btn3 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+            <button onclick="storeReciter(3); "
+              class="btn3 mt-2 reciterButton text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -172,7 +180,7 @@
               Abu Bakr ash-Shaatree
             </h2>
             <button onclick="storeReciter(4);"
-              class="btn4 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+              class="btn4 mt-2 reciterButton text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -189,7 +197,7 @@
               Mishary Rashed Alafasy
             </h2>
             <button onclick="storeReciter(5);"
-              class="btn5 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+              class="btn5 mt-2 reciterButton text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -206,7 +214,7 @@
               Saad al-Ghamdi
             </h2>
             <button onclick="storeReciter(6);"
-              class="btn6 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+              class="btn6 mt-2 text-sm font-medium reciterButton capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -223,7 +231,7 @@
               Hani ar-Rifai
             </h2>
             <button onclick="storeReciter(7);"
-              class="btn7 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+              class="btn7 mt-2 text-sm reciterButton font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -240,7 +248,7 @@
               Mahmoud Khalil al-Hussary
             </h2>
             <button onclick="storeReciter(8);"
-              class="btn8 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+              class="btn8 mt-2 reciterButton text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -257,7 +265,7 @@
               Ali ibn Abdur-Rahman al-Hudhaify
             </h2>
             <button onclick="storeReciter(9);"
-              class="btn9 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+              class="btn9 mt-2 text-sm reciterButton font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -274,7 +282,7 @@
               Maher al-Mu'aiqly
             </h2>
             <button onclick="storeReciter(10);"
-              class="btn10 mt-2 text-sm font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
+              class="btn10 mt-2 text-sm reciterButton font-medium capitalize border border-transparent rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-1.5 hover:opacity-90 transition"
             >
               Select
             </button>
@@ -307,9 +315,25 @@
     <script>
       let containing = document.getElementById("quranSurahs");
       let reciterIndex = 0;
+      let reciterButton = document.querySelectorAll('.reciterButton');
 
+
+      reciterButton.forEach((btn)=> {
+        btn.addEventListener('click', function(){
+
+          //remove the active state
+          reciterButton.forEach((activeBtn)=>{
+            activeBtn.classList.remove('activeReciter');
+            activeBtn.textContent = "Select";
+          });
+
+          this.classList.add('activeReciter');
+          this.textContent = "Selected...";
+        });
+      });
 
       function storeReciter(value){
+
         if(value == ""){
           return;
         }
@@ -340,11 +364,7 @@
           "https://staticquran.vercel.app/api/v1/surah"
         );
         const data = await response.json();
-        // console.log(data);
-        // let reciterCards = document.querySelector('.reciterCards');
-        // reciterCards.forEach(button => {
-        //   console.log(id)
-        // })
+       
 
         data.data.forEach((data) => {
           const getQuranSurahscard = document.createElement("div");
@@ -380,7 +400,10 @@
 
 
 
-
+   let butn = document.getElementsByTagName('button');
+   butn.onclick=function(){
+   console.log('hi');
+   }
 
 
           let cardPlayer = document.getElementById("cardPlayer");
@@ -394,12 +417,7 @@
           async function getRecitationLink() {
             const request = await fetch(audio);
             const answer = await request.json();
-            console.log("index = " + reciterIndex);
-            console.log(audio);
-            console.log("the reciter index is " + reciterIndex);
             const apiAudioPath = answer.data.recitation.audio;
-            console.log(audio);
-            console.log(apiAudioPath);
             cardPlayer.pause();
             cardPlayer.src = apiAudioPath;
             cardPlayer.play();
