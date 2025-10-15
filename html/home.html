@@ -110,7 +110,11 @@
         </ul>
       </div>
       <!--reciters-->
+     
       <div class="md:mt-30 mt-15">
+         <div class="bg-emerald-400 text-white text-center py-2 hidden" id="notification">
+  <h1 class="text-xl font-thin capitalize"> refresh to select a new reciter</h1>
+</div>
         <div
           class="reciterCards flex gap-6 overflow-x-auto lg:w-full px-4 py-4 scroll-smooth"
         >
@@ -297,7 +301,7 @@
         ></div>
 
         <div
-          class="fixed bottom-20 left-8 md:top-20 md:left-120 hidden"
+          class="fixed bottom-20 left-8 md:top-40 md:left-180 hidden"
           id="cardPlayerDiv"
         >
           <h1
@@ -329,6 +333,7 @@
 
           this.classList.add('activeReciter');
           this.textContent = "Selected...";
+          document.getElementById('notification').classList.remove('hidden')
         });
       });
 
