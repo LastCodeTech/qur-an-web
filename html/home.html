@@ -113,7 +113,7 @@
      
       <div class="md:mt-30 mt-15">
          <div class="bg-emerald-400 text-white text-center py-2 hidden" id="notification">
-  <h1 class="text-xl font-thin capitalize"> refresh to select a new reciter</h1>
+  <button class="text-base font-thin capitalize "id='refreshPgBtn'> Want a Different Voice? click to refresh the Page</button>
 </div>
         <div
           class="reciterCards flex gap-6 overflow-x-auto lg:w-full px-4 py-4 scroll-smooth"
@@ -487,6 +487,11 @@
 
     <!-- <script src="../js/interactivity.js"></script> -->
     <script>
+      let refreshPgBtn = document.getElementById('refreshPgBtn');
+      refreshPgBtn.addEventListener('click',function(){
+      console.log('hi');
+        window.location.reload();
+      })
       let containing = document.getElementById("quranSurahs");
       let reciterIndex = 0;
       let reciterButton = document.querySelectorAll('.reciterButton');
